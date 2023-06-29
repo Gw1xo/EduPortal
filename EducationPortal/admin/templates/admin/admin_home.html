@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+  <h1>Сторінка адміністрації навчального закладу: {{ name }}</h1>
+    <p>Унікальний ідентифікатор школи: {{ uniq }}</p>
+    <ul>
+    <li><a href="/adm/student"> Учні </a></li>
+    <li><a href="/adm/teacher"> Вчителі </a></li>
+    <li><a href="/adm/subject"> Навчальні предмети </a></li>
+    <li><a href="/adm/class"> Класи </a></li>
+    <li><a href="/adm/schedule"> Розклад </a></li>
+    </ul>
+{% endblock -%}

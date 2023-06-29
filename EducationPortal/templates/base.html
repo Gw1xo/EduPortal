@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link type="text/css"
+          href="{{ url_for('static', filename='css/styles.css') }}"
+          rel="stylesheet">
+    {% block title -%}
+    <meta charset="UTF-8">
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>Освітній портал</title>
+    {% endif %}
+    {% endblock -%}
+</head>
+<body>
+    {% for msg in get_flashed_messages() %}
+    <div class="flash_msg">{{msg}}</div>
+    {% endfor %}
+    {% block content -%}
+    {% endblock -%}
+</body>
+</html>

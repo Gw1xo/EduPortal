@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+<h1>Форма реєстрації адміністрації навчального закладу:</h1>
+<form method="POST" action="">
+    {{ form.csrf_token }}
+    {{ form.name_school.label }} {{ form.name_school }}
+    {% if form.name_school.errors %}
+        <ul>
+        {% for error in form.name_school.errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}<br><br>
+    {{ form.address_school.label }} {{ form.address_school }}
+    {% if form.address_school.errors %}
+        <ul>
+        {% for error in form.address_school.errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}<br><br>
+    {{ form.email.label }} {{ form.email }}
+    {% if form.login.errors %}
+        <ul>
+        {% for error in form.email.errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}<br><br>
+    {{ form.login.label }} {{ form.login }}
+    {% if form.login.errors %}
+        <ul>
+        {% for error in form.login.errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}<br><br>
+{{ form.password.label }} {{ form.password }}
+    {% if form.password.errors %}
+        <ul>
+        {% for error in form.password.errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}<br><br>
+{{ form.conf_password.label }} {{ form.conf_password }}
+    {% if form.conf_password.errors %}
+        <ul>
+        {% for error in form.conf_password.errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}<br><br>
+    {{ form.submit }}
+</form>
+    <a href="/">Вже зареєстровані?</a>
+{% endblock %}

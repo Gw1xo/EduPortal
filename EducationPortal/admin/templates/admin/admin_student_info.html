@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+    <p><a href="{{ url_for('admin.admin_students') }}">До списку студентів</a></p>
+    <h1>Інформація про студента</h1>
+    <ul>
+    <li>Ім'я: {{ student[3] }}</li>
+    <li>Прізвище: {{ student[4] }}</li>
+    <li>По-батькові: {{ student[5] }}</li>
+    <li>Стать: {{ student[6] }}</li>
+    <li>Клас: {{ student_class[1] }}</li>
+    </ul>
+    <h2>Контакти:</h2>
+    <ul>
+    <li>Email: {{ user[1] }}</li>
+    <li>Номер телефону: {{ student[7] }}</li>
+    <li>Домашня адреса: {{ student[8] }}</li>
+    </ul>
+    <h2>Номер свідоцтва про народження</h2>
+    <p> {{ student[9] }} </p>
+    <h2>Особистий кабінет</h2>
+    <ul>
+    <li>Логін: {{ user[2] }}</li>
+    <li>Пароль: {{ user[3] }}</li>
+    </ul>
+    <h2>Дані опікунів:</h2>
+        <ul>
+        <li>Ім'я: {{ student[10] }}</li>
+        <li>Прізвище: {{ student[11] }}</li>
+        <li>По-батькові: {{ student[12] }}</li>
+        <li>Email: {{ student[13] }}</li>
+        <li>Номер телефону: {{ student[14] }}</li>
+        </ul>
+        <ul>
+        <li>Ім'я: {{ student[15] }}</li>
+        <li>Прізвище: {{ student[16] }}</li>
+        <li>По-батькові: {{ student[17] }}</li>
+        <li>Email: {{ student[18] }}</li>
+        <li>Номер телефону: {{ student[19] }}</li>
+        </ul>
+{% endblock -%}

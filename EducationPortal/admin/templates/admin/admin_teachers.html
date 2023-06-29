@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        {{ super() }}
+    <p><a href="/adm">На головну</a></p>
+    <a href="/adm/teacher/add">Зареєструвати вчителя</a>
+  <p>Вчителі:</p>
+    <ul>
+    {% for teacher in teachers %}
+         <li>{{ teacher[3] }} {{ teacher[2] }} {{ teacher[4] }}
+             Логін: {{ get_user(teacher[1])[2] }}
+             Пароль: {{ get_user(teacher[1])[3] }}</li>
+        <form action="{{ url_for('admin.teacher_delete') }}" method="post">
+            {{ form.csrf_token }}
+            <input type="hidden" name="teacher_id" value="{{ teacher[0] }}">
+            <input type="submit" value="Видалити">
+        </form>
+        <form action="{{ url_for('admin.teacher_info') }}" method="post">
+            {{ form.csrf_token }}
+            <input type="hidden" name="teacher_id" value="{{ teacher[0] }}">
+            <input type="submit" value="Інформація про викладача">
+        </form>
+    {% endfor %}
+    </ul>
+
+{% endblock -%}

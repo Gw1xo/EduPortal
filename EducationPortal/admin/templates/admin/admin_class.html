@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+    <p><a href="/adm">На головну</a></p>
+  <p>Створення класу:</p>
+    <form action="" method="post">
+    {{ form.csrf_token }}
+    {{ form.class_name.label }} {{ form.class_name }}
+    {% if form.class_name.errors %}
+        <ul>
+        {% for error in form.class_name.errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    {{ form.submit }}
+    </form><br><br>
+    <ul>
+    {% for class in classes %}
+        <li>Клас {{ class[1] }}</li>
+        <form action="{{ url_for('admin.admin_class_del') }}" method="post">
+            {{ form.csrf_token }}
+            <input type="hidden" name="class_id" value="{{ class[0] }}">
+            <input type="submit" value="Видалити">
+        </form>
+    {% endfor %}
+    </ul>
+
+
+{% endblock -%}

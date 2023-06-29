@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+<h1>Особистий кабінет вчителя: {{ teacher[3] }} {{ teacher[2] }}</h1>
+    <ul>
+        <li><a href="{{ url_for("teacher.teacher_courses") }}">Навчальні потоки</a></li>
+        <li><a href="{{ url_for("teacher.teacher_courses") }}">Переглянути журнал</a></li>
+        <li><a href="{{ url_for("teacher.teacher_courses") }}">Список відповідей</a></li>
+    </ul>
+
+{% endblock -%}

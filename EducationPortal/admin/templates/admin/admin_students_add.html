@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+    <p><a href="{{ url_for('admin.admin_students') }}">До списку студентів</a></p>
+    <form method="POST">
+        {{ form.csrf_token }}
+        <div>
+            {{ form.firstname.label }} {{ form.firstname }}
+        </div>
+        <div>
+            {{ form.lastname.label }} {{ form.lastname }}
+        </div>
+        <div>
+            {{ form.patronymic.label }} {{ form.patronymic }}
+        </div>
+        <div>
+            {{ form.gender.label }} {{ form.gender }}
+        </div>
+        <div>
+            {{ form.phone_number.label }} {{ form.phone_number }}
+        </div>
+        <div>
+            {{ form.home_address.label }} {{ form.home_address }}
+        </div>
+        <div>
+            {{ form.birth_certificate.label }} {{ form.birth_certificate }}
+        </div>
+        <div>
+            {{ form.parent1_firstname.label }} {{ form.parent1_firstname }}
+        </div>
+        <div>
+            {{ form.parent1_laststname.label }} {{ form.parent1_laststname }}
+        </div>
+        <div>
+            {{ form.parent1_patronymic.label }} {{ form.parent1_patronymic }}
+        </div>
+        <div>
+            {{ form.parent1_phone_number.label }} {{ form.parent1_phone_number }}
+        </div>
+        <div>
+            {{ form.parent1_email.label }} {{ form.parent1_email }}
+        </div>
+        <div>
+            {{ form.parent2_firstname.label }} {{ form.parent2_firstname }}
+        </div>
+        <div>
+            {{ form.parent2_laststname.label }} {{ form.parent2_laststname }}
+        </div>
+        <div>
+            {{ form.parent2_patronymic.label }} {{ form.parent2_patronymic }}
+        </div>
+        <div>
+            {{ form.parent2_phone_number.label }} {{ form.parent2_phone_number }}
+        </div>
+        <div>
+            {{ form.parent2_email.label }} {{ form.parent2_email }}
+        </div>
+        <div>
+            {{ form.class_name.label }} {{ form.class_name }}
+        </div>
+        <div>
+            {{ form.submit }}
+        </div>
+    </form>
+{% endblock -%}

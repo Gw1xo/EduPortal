@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+    <p><a href="{{ url_for('admin.admin_teachers') }}">До списку викладачів</a></p>
+    <h1>Інформація про викладача</h1>
+    <ul>
+    <li>Ім'я: {{ teacher[2] }}</li>
+    <li>Прізвище: {{ teacher[3] }}</li>
+    <li>По-батькові: {{ teacher[4] }}</li>
+    <li>Стать: {{ teacher[5] }}</li>
+    </ul>
+    <h2>Контакти:</h2>
+    <ul>
+    <li>Email: {{ user[1] }}</li>
+    <li>Номер телефону: {{ teacher[6] }}</li>
+    <li>Домашня адреса: {{ teacher[8] }}</li>
+    </ul>
+    <h2>Номер паспорта</h2>
+    <p> {{ teacher[7] }} </p>
+    <h2>Особистий кабінет</h2>
+    <ul>
+    <li>Логін: {{ user[2] }}</li>
+    <li>Пароль: {{ user[3] }}</li>
+    </ul>
+    <h2>Додаткові дані:</h2>
+        <ul>
+        <li>Рівень освіти: {{ teacher[9] }}</li>
+        <li>Додаткові кваліфікації: {{ teacher[10] }}</li>
+        <li>Стаж роботи: {{ teacher[11] }}</li>
+        </ul>
+{% endblock -%}

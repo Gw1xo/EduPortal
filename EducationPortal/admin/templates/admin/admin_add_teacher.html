@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+    <p><a href="{{ url_for('admin.admin_teachers') }}">До списку викладачів</a></p>
+    <form action="" method="post">
+    {{ form.csrf_token }}
+    <div>
+        {{ form.firstname.label }} {{ form.firstname(size=20) }}
+        {% for error in form.firstname.errors %}
+            <span class="error">{{ error }}</span>
+        {% endfor %}
+    </div>
+    <div>
+        {{ form.lastname.label }} {{ form.lastname(size=20) }}
+        {% for error in form.lastname.errors %}
+            <span class="error">{{ error }}</span>
+        {% endfor %}
+    </div>
+    <div>
+        {{ form.patronymic.label }} {{ form.patronymic(size=20) }}
+        {% for error in form.patronymic.errors %}
+            <span class="error">{{ error }}</span>
+        {% endfor %}
+    </div>
+    <div>
+        {{ form.gender.label }} {{ form.gender }}
+        {% for error in form.gender.errors %}
+            <span class="error">{{ error }}</span>
+        {% endfor %}
+    </div>
+    <div>
+        {{ form.phone_number.label }} {{ form.phone_number(size=20) }}
+        {% for error in form.phone_number.errors %}
+            <span class="error">{{ error }}</span>
+        {% endfor %}
+    </div>
+    <div>
+        {{ form.home_address.label }} {{ form.home_address(size=20) }}
+        {% for error in form.home_address.errors %}
+            <span class="error">{{ error }}</span>
+        {% endfor %}
+    </div>
+    <div>
+        {{ form.psp_number.label }} {{ form.psp_number(size=20) }}
+        {% for error in form.psp_number.errors %}
+            <span class="error">{{ error }}</span>
+        {% endfor %}
+    </div>
+    <div>
+        {{ form.education_level.label }} {{ form.education_level(size=20) }}
+        {% for error in form.education_level.errors %}
+            <span class="error">{{ error }}</span>
+        {% endfor %}
+    </div>
+    <div>
+        {{ form.additional_qualification.label }} {{ form.additional_qualification(size=20) }}
+        {% for error in form.additional_qualification.errors %}
+            <span class="error">{{ error }}</span>
+        {% endfor %}
+    </div>
+    <div>
+        {{ form.experience_age.label }} {{ form.experience_age(size=20) }}
+        {% for error in form.experience_age.errors %}
+            <span class="error">{{ error }}</span>
+        {% endfor %}
+    </div>
+    <div>
+        {{ form.submit }}
+    </div>
+</form>
+
+{% endblock -%}
